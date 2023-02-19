@@ -1,7 +1,11 @@
+import Header from './components/header/Header';
+import Main from './components/product/Main';
+
 const App = () => {
   return (
     <>
-      <h1 className="text-center">My React App</h1>
+      <Header />
+      <Main />
     </>
   );
 };
