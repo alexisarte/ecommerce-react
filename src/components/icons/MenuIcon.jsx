@@ -1,4 +1,4 @@
-const MenuIcon = ({props}) => {
+const MenuIcon = (props) => {
   return (
     <svg {...props} width="16" height="15" xmlns="http://www.w3.org/2000/svg">
       <path
