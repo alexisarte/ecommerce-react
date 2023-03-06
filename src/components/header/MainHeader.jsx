@@ -49,10 +49,10 @@ const MainHeader = () => {
           <button>
             <CartIcon />
           </button>
-          <img src={AvatarImage} alt="" className="w-10" />
+          <img src={AvatarImage} alt=""   className="w-10" />
         </div>
       </header>
-      <span className="container mx-auto h-[1px] w-full bg-gray-500 md:block"></span>
+      <span className="container mx-auto h-[3px] w-full bg-gray-500 md:block"></span>
     </>
   );
 };
