@@ -1,5 +1,6 @@
 import NextIcon from '@/components/icons/NextIcon';
 import PrevIcon from '@/components/icons/PrevIcon';
+import CloseIcon from '@/components/icons/CloseIcon';
 import { useRef, useState, useEffect } from 'react';
 
 export default ({
@@ -28,15 +29,15 @@ export default ({
   return (
     <section {...props}>
       {isOpenModal && (
-        <button onClick={handleCloseModal} className="text-right md:col-span-4">
-          cerrar
+        <button onClick={handleCloseModal} className="ml-auto md:col-span-4">
+          <CloseIcon fill="#fff" />
         </button>
       )}
       <div className="relative col-span-4">
         <img
           src={ARRAY_IMGS[index]}
           alt=""
-          className="aspect-[16/12] w-full cursor-pointer rounded-md"
+          className="aspect-[16/13] w-full md:aspect-[16/18] md:cursor-pointer md:rounded-md xl:aspect-[16/16] 2xl:max-h-96 2xl:aspect-[500px]"
           onClick={handleOpenMOdal}
         />
         <div
@@ -65,7 +66,9 @@ export default ({
         >
           <img src={smallImg} alt="" className="hidden md:block" />
           <span
-            className={`absolute top-0 h-full w-full hover:bg-[rgba(255,255,255,0.5)] ${i === index && 'bg-[rgba(255,255,255,0.5)]'}`}
+            className={`absolute top-0 h-full w-full hover:bg-[rgba(255,255,255,0.5)] ${
+              i === index && 'bg-[rgba(255,255,255,0.5)]'
+            }`}
           ></span>
         </div>
       ))}
