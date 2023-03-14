@@ -1,11 +1,15 @@
 import IndexHeader from '@/components/header/IndexHeader';
 import IndexProduct from '@/components/product/IndexProduct';
 
+import CartDetailProvider from '@/components/context/UseCartDetails';
+
 const App = () => {
   return (
     <>
-      <IndexHeader />
-      <IndexProduct />
+      <CartDetailProvider>
+        <IndexHeader />
+        <IndexProduct />
+      </CartDetailProvider>
     </>
   );
 };

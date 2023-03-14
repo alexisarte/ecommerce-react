@@ -1,13 +1,19 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { useCartDetails } from '@/components/context/UseCartDetails';
+
 import LogoSneakes from '@/assets/images/logo.svg';
 import AvatarImage from '@/assets/images/image-avatar.png';
+
 import MenuIcon from '@/components/icons/MenuIcon';
 import CartIcon from '@/components/icons/CartIcon';
 import CloseIcon from '@/components/icons/CloseIcon';
 import NavLinkHeader from '@/components/header/NavLinkHeader';
+
 import CardDetailsHeader from './CardDetailsHeader';
 
 const MainHeader = () => {
+  const { cartProduct, totalQuantityProduct } = useContext(useCartDetails);
+
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenDetailsCart, setIsOpenDetailsCart] = useState(false);
 
@@ -44,8 +50,14 @@ const MainHeader = () => {
           <NavLinkHeader text="Contact" />
         </nav>
         <div className="flex gap-4">
-          <button onClick={() => setIsOpenDetailsCart(!isOpenDetailsCart)}>
+          <button
+            onClick={() => setIsOpenDetailsCart(!isOpenDetailsCart)}
+            className="relative"
+          >
             <CartIcon />
+            <span className="absolute top-0 right-0 translate-x-1 rounded-full bg-orange-primary px-1 text-xs font-bold text-white">
+              {totalQuantityProduct}
+            </span>
           </button>
           <img src={AvatarImage} alt="" className="w-10" />
           {isOpenDetailsCart && <CardDetailsHeader />}
