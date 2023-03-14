@@ -18,11 +18,25 @@ const ARRAY_IMGS_SMALL = [
   imgProductSmall4,
 ];
 
+const objectProduct = {
+  id: 1,
+  subtitle: 'Sneakers Company',
+  title: 'Fall Limited Edition Sneakers',
+  description:'These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.',
+  price: 250,
+  discount: 0.45,
+  imagesMain: ARRAY_IMGS,
+  imagesSmall: ARRAY_IMGS_SMALL,
+};
+
 const IndexProduct = () => {
   return (
-    <main className="mx-auto grid grid-cols-1 items-center gap-8 container md:min-h-[calc(100vh-88px-3px)] md:grid-cols-2">
-      <GalleryProduct ARRAY_IMGS={ARRAY_IMGS} ARRAY_IMGS_SMALL={ARRAY_IMGS_SMALL} />
-      <DetailsProduct />
+    <main className="container mx-auto grid grid-cols-1 items-center gap-8 md:min-h-[calc(100vh-88px-3px)] md:grid-cols-2">
+      <GalleryProduct
+        ARRAY_IMGS={objectProduct.imagesMain}
+        ARRAY_IMGS_SMALL={objectProduct.imagesSmall}
+      />
+      <DetailsProduct objectProduct={objectProduct} />
     </main>
   );
 };

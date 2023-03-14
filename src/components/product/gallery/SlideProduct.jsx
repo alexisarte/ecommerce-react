@@ -37,7 +37,7 @@ export default ({
         <img
           src={ARRAY_IMGS[index]}
           alt=""
-          className="aspect-[16/13] w-full md:aspect-[16/18] md:cursor-pointer md:rounded-md xl:aspect-[16/16] 2xl:max-h-96 2xl:aspect-[500px]"
+          className="aspect-[16/13] w-full object-cover md:aspect-[16/18] md:cursor-pointer md:rounded-md xl:aspect-[16/16] 2xl:aspect-[500px] 2xl:max-h-96"
           onClick={handleOpenMOdal}
         />
         <div
