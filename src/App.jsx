@@ -1,15 +1,14 @@
-import IndexHeader from '@/components/header/IndexHeader';
-import IndexProduct from '@/components/product/IndexProduct';
-
-import CartDetailProvider from '@/components/context/UseCartDetails';
+import { Route, Routes } from 'react-router';
+import Home from '@/pages/Home';
+import NotFound from '@/pages/NotFound';
 
 const App = () => {
   return (
     <>
-      <CartDetailProvider>
-        <IndexHeader />
-        <IndexProduct />
-      </CartDetailProvider>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 };
